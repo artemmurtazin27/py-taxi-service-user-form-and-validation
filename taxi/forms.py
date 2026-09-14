@@ -6,7 +6,7 @@ from taxi.models import Driver, Car
 
 class DriverLicenseUpdateForm(forms.ModelForm):
     class Meta:
-        model = Driver
+        model = get_user_model()
         fields = ("license_number",)
 
 
@@ -18,4 +18,10 @@ class CarCreateForm(forms.ModelForm):
 
     class Meta:
         model = Car
+        fields = "__all__"
+
+
+class DriverCreationForm(forms.ModelForm):
+    class Meta:
+        model = Driver
         fields = "__all__"
