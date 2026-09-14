@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.auth import get_user_model
+from django.contrib.auth.forms import UserCreationForm
 
 from taxi.models import Driver, Car
 
@@ -21,7 +22,7 @@ class CarCreateForm(forms.ModelForm):
         fields = "__all__"
 
 
-class DriverCreationForm(forms.ModelForm):
+class DriverCreationForm(UserCreationForm):
     class Meta:
         model = Driver
         fields = "__all__"
