@@ -16,9 +16,11 @@ class Manufacturer(models.Model):
 
 
 license_validator = RegexValidator(
-    regex=r'^[A-Z]{3}\d{5}$',
-    message="License number must consist of 3 uppercase letters followed by 5 digits (e.g. ABC12345)."
+    regex=r"^[A-Z]{3}\d{5}$",
+    message="License number must consist of 3 uppercase letters "
+            "followed by 5 digits (e.g. ABC12345)."
 )
+
 
 class Driver(AbstractUser):
     license_number = models.CharField(
